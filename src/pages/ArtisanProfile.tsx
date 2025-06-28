@@ -17,7 +17,7 @@ const ArtisanProfile = () => {
     trade: "Master Carpenter",
     specialization: "Custom Furniture & Interior Woodwork",
     rating: 4.8,
-    reviews: 127,
+    reviewCount: 127,
     location: "Mumbai, Maharashtra",
     experience: "15+ years",
     hourlyRate: "₹500-800/hour",
@@ -58,34 +58,35 @@ const ArtisanProfile = () => {
         completedDate: "December 2023",
         budget: "₹65,000"
       }
-    ],
-    reviews: [
-      {
-        id: 1,
-        client: "Arjun Patel",
-        rating: 5,
-        date: "March 2024",
-        comment: "Excellent work on our kitchen cabinets. Rajesh was professional, punctual, and delivered exactly what we wanted. Highly recommended!",
-        project: "Kitchen Cabinet Installation"
-      },
-      {
-        id: 2,
-        client: "Priya Kumar",
-        rating: 4.8,
-        date: "February 2024",
-        comment: "Beautiful staircase work with great attention to detail. The craftsmanship is outstanding and the project was completed on time.",
-        project: "Custom Wooden Staircase"
-      },
-      {
-        id: 3,
-        client: "Rohit Singh",
-        rating: 4.9,
-        date: "January 2024",
-        comment: "Amazing wardrobes that perfectly fit our space. Rajesh understood our requirements and delivered beyond expectations.",
-        project: "Built-in Wardrobes"
-      }
     ]
   };
+
+  const reviews = [
+    {
+      id: 1,
+      client: "Arjun Patel",
+      rating: 5,
+      date: "March 2024",
+      comment: "Excellent work on our kitchen cabinets. Rajesh was professional, punctual, and delivered exactly what we wanted. Highly recommended!",
+      project: "Kitchen Cabinet Installation"
+    },
+    {
+      id: 2,
+      client: "Priya Kumar",
+      rating: 4.8,
+      date: "February 2024",
+      comment: "Beautiful staircase work with great attention to detail. The craftsmanship is outstanding and the project was completed on time.",
+      project: "Custom Wooden Staircase"
+    },
+    {
+      id: 3,
+      client: "Rohit Singh",
+      rating: 4.9,
+      date: "January 2024",
+      comment: "Amazing wardrobes that perfectly fit our space. Rajesh understood our requirements and delivered beyond expectations.",
+      project: "Built-in Wardrobes"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -146,7 +147,7 @@ const ArtisanProfile = () => {
                       <div className="flex items-center gap-2">
                         <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                         <span className="font-semibold text-lg">{artisan.rating}</span>
-                        <span className="text-gray-600">({artisan.reviews} reviews)</span>
+                        <span className="text-gray-600">({artisan.reviewCount} reviews)</span>
                       </div>
                       <div className="flex items-center gap-2 text-gray-600">
                         <MapPin className="h-4 w-4" />
@@ -262,7 +263,7 @@ const ArtisanProfile = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
-                  {artisan.reviews.map((review) => (
+                  {reviews.map((review) => (
                     <div key={review.id} className="border-b border-gray-200 pb-6 last:border-b-0">
                       <div className="flex items-start justify-between mb-3">
                         <div>
